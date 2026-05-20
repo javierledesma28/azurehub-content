@@ -15,6 +15,8 @@
 
 [**📖 Read it rendered →**](https://azurehub.t28.io/learn) &nbsp;·&nbsp; [**🛠 Try the product →**](https://azurehub.t28.io)
 
+<sub>Maintained by **Javier Ledesma** · Head of IT & Cloud Strategy at Fundanet · Microsoft Azure Solutions Architect Expert · 15+ years operating Azure in regulated environments (banking · health · public sector) · [LinkedIn](https://www.linkedin.com/in/ledesmajavier/)</sub>
+
 </div>
 
 ---
@@ -173,11 +175,35 @@ A star helps the next architect Google their way here. Costs you a click, takes 
 
 ## About the author
 
-Built and maintained by **[Javier Ledesma](https://www.linkedin.com/in/ledesmajavier/)** — independent architect, designing Azure systems since the early days.
+**[Javier Ledesma](https://www.linkedin.com/in/ledesmajavier/)** — Head of IT & Cloud Strategy at [Fundanet (Semicrol)](https://www.fundanet.com), leading Azure infrastructure and security for a clinical research platform used by hospitals, universities and research centers across Spain and Europe.
 
-- 🌐 **t28.io** — consulting practice
-- 📨 **hola@t28.io** — say hi, request a deep dive on a topic, or hire for consulting
-- 💼 **LinkedIn** → [in/ledesmajavier](https://www.linkedin.com/in/ledesmajavier/)
+**15+ years** designing and operating Microsoft Azure platforms in high-criticality, regulated environments:
+
+- 🏥 **Health** — clinical research platforms under ENS / ISO 27001 / GDPR
+- 🏛 **Public sector** — Spanish national security framework (ENS)
+- 🏦 **Banking** — regulated workloads, segmentation, compliance
+
+**Current focus:**
+
+- 🛡 Hub & Spoke, Landing Zones, Azure Virtual Desktop
+- 🔐 Defender for Cloud · Sentinel · Entra ID · Conditional Access · PIM
+- 🤖 Agentic AI on Azure (Semantic Kernel + Azure OpenAI + custom MCP servers + Azure AI Search RAG)
+- 🛠 IaC with Terraform · Azure DevOps · GitHub Actions
+- 💰 FinOps + cloud cost optimization
+
+**Credentials:**
+
+- Microsoft **Azure Solutions Architect Expert** (AZ-305)
+- AI & LLM Specialization (Anthropic ×5, NVIDIA ×1)
+- VMware VCP / VSP / VTSP
+- Scrum Fundamentals Certified
+
+**Reach me:**
+
+- 💼 **LinkedIn** → [in/ledesmajavier](https://www.linkedin.com/in/ledesmajavier/) — for consulting engagements & discussions
+- 📨 **hola@t28.io** — request a deep dive on a topic, propose a collaboration
+- 🌐 **[t28.io](https://t28.io)** — independent consulting practice
+- ✍️ **[blog.javierledesma.com.ar](https://blog.javierledesma.com.ar)** — long-form writing
 - 🛠 **The product** → [azurehub.t28.io](https://azurehub.t28.io)
 
 ---
