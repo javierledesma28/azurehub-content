@@ -55,6 +55,25 @@ Phase 1 + 2 cover ~30 resource types that account for 80% of architectures we se
 
 Anything not in this list still renders — with a generic Azure icon and the full ARM type as label, so you don't lose information.
 
+## On-demand layers (Identity + Data plane)
+
+Beyond network edges (which come automatically with the import), two extra layers are available on-demand from the right sidebar:
+
+### Identity layer (Phase 4)
+- **What it shows**: Managed Identity → resource edges, labeled with the role name (Reader, Storage Blob Data Reader, Contributor, etc.).
+- **Source**: cross-checks System+User assigned MIs from your imported resources against Azure role assignments at sub/RG/resource scope.
+- **When to use it**: Zero-Trust review, detecting overly permissive scopes, audit of "who can read what".
+- **Permission**: read access to `Microsoft.Authorization/roleAssignments` and `Microsoft.Authorization/roleDefinitions` — included in `Reader` at subscription scope.
+- **UI**: click **Show identity** in the right sidebar. Click **Hide** to remove the edges from the canvas.
+
+### Data plane layer (Phase 5)
+- **What it shows**: App Service → SQL / Storage / Cosmos / Key Vault / Service Bus / Event Hub / Redis edges, inferred from app settings + connection strings.
+- **Source**: pattern matching on `*.database.windows.net`, `*.blob.core.windows.net`, `@Microsoft.KeyVault(VaultName=...)`, etc.
+- **When to use it**: discover hidden dependencies between an App Service and its backing services without reading deployment YAML.
+- **Permission**: `Microsoft.Web/sites/config/list/action` on the App Service's RG — included in `Reader`.
+- **Privacy**: the actual setting values (which may contain credentials) are read transiently and discarded. We never persist them. Only the resolved target ARM IDs become edges.
+- **UI**: click **Show dependencies** in the right sidebar.
+
 ## How the layers work
 
 | Layer | What goes on it | When created | Refreshable? |

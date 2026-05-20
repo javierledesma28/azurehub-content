@@ -55,6 +55,25 @@ Phase 1 + 2 cubren ~30 tipos de recurso que representan el 80% de las arquitectu
 
 Cualquier cosa fuera de esta lista se importa igual — con un ícono Azure genérico y el ARM type completo como label, así no perdés información.
 
+## Capas on-demand (Identity + Data plane)
+
+Más allá de los edges de red (que vienen automáticamente con el import), hay dos capas extra disponibles a pedido desde el panel derecho:
+
+### Capa Identity (Phase 4)
+- **Qué muestra**: edges Managed Identity → recurso, con label del nombre del rol (Reader, Storage Blob Data Reader, Contributor, etc.).
+- **Fuente**: cruza las MIs System+User assigned de tus recursos importados con role assignments de Azure a nivel sub/RG/recurso.
+- **Cuándo usarlo**: review de Zero-Trust, detectar scopes demasiado permisivos, auditoría de "quién puede leer qué".
+- **Permiso**: lectura de `Microsoft.Authorization/roleAssignments` y `Microsoft.Authorization/roleDefinitions` — incluido en `Reader` a nivel subscription.
+- **UI**: click en **Mostrar identidad** en el panel derecho. Click en **Ocultar** para quitar los edges del canvas.
+
+### Capa Data plane (Phase 5)
+- **Qué muestra**: edges App Service → SQL / Storage / Cosmos / Key Vault / Service Bus / Event Hub / Redis, inferidos a partir de app settings + connection strings.
+- **Fuente**: pattern matching de `*.database.windows.net`, `*.blob.core.windows.net`, `@Microsoft.KeyVault(VaultName=...)`, etc.
+- **Cuándo usarlo**: descubrir dependencias ocultas entre una App Service y sus backing services sin leer YAML de despliegue.
+- **Permiso**: `Microsoft.Web/sites/config/list/action` en el RG del App Service — incluido en `Reader`.
+- **Privacidad**: los valores reales de los settings (que pueden contener credenciales) se leen de forma transitoria y se descartan. Nunca los persistimos. Sólo los target ARM IDs resueltos se vuelven edges.
+- **UI**: click en **Mostrar dependencias** en el panel derecho.
+
 ## Cómo funcionan las capas
 
 | Capa | Qué va ahí | Cuándo se crea | ¿Refrescable? |
