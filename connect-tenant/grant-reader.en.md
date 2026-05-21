@@ -48,6 +48,8 @@ Wait ~30-60 seconds for propagation, then click the refresh icon in the Tenant I
 
 ## Option B — Azure CLI (recommended)
 
+### Option B.1 — bash / WSL
+
 ```bash
 # 1. Login to the tenant you connected to Azure Hub
 az login --tenant <YOUR_TENANT_ID>
@@ -55,19 +57,44 @@ az login --tenant <YOUR_TENANT_ID>
 # 2. List your subscriptions and pick one
 az account list --query "[].{name:name, id:id}" -o table
 
-# 3. Get the SP object id for the Tenant Connector (one-time)
+# 3. Get the SP object id for the Tenant Connector
 SP_OBJECT_ID=$(az ad sp show --id [CONNECTOR_CLIENT_ID] --query id -o tsv)
 echo "SP object id: $SP_OBJECT_ID"
 
 # 4. Grant Reader on the subscription
 az role assignment create \
-  --assignee-object-id $SP_OBJECT_ID \
+  --assignee-object-id "$SP_OBJECT_ID" \
   --assignee-principal-type ServicePrincipal \
   --role "Reader" \
   --scope "/subscriptions/<SUBSCRIPTION_ID>"
 ```
 
-## Option C — PowerShell
+### Option B.2 — PowerShell with az cli
+
+> **⚠ Important:** `SP_OBJECT_ID=$(...)` is **bash** syntax and does NOT work in PowerShell — the variable stays empty and the next command fails with `argument --assignee-object-id: expected one argument`. In PowerShell use `$VAR = command` (equals sign with spaces).
+
+```powershell
+# 1. Login to the tenant you connected to Azure Hub
+az login --tenant <YOUR_TENANT_ID>
+
+# 2. List your subscriptions and pick one
+az account list --query "[].{name:name, id:id}" -o table
+
+# 3. Get the SP object id for the Tenant Connector
+$SP_OBJECT_ID = az ad sp show --id [CONNECTOR_CLIENT_ID] --query id -o tsv
+Write-Host "SP object id: $SP_OBJECT_ID"
+
+# 4. Grant Reader on the subscription
+az role assignment create `
+  --assignee-object-id $SP_OBJECT_ID `
+  --assignee-principal-type ServicePrincipal `
+  --role "Reader" `
+  --scope "/subscriptions/<SUBSCRIPTION_ID>"
+```
+
+### Option C — PowerShell with Az module (alternative)
+
+Only if you already have the `Az` module installed and prefer native cmdlets:
 
 ```powershell
 # 1. Login

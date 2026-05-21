@@ -48,6 +48,8 @@ Esperá ~30-60 segundos para propagación, después click en el ícono refresh d
 
 ## Opción B — Azure CLI (recomendado)
 
+### Opción B.1 — bash / WSL
+
 ```bash
 # 1. Login al tenant que conectaste con Azure Hub
 az login --tenant <TU_TENANT_ID>
@@ -55,19 +57,44 @@ az login --tenant <TU_TENANT_ID>
 # 2. Listá tus subs y elegí una
 az account list --query "[].{name:name, id:id}" -o table
 
-# 3. Obtené el object id del SP del Tenant Connector (una sola vez)
+# 3. Obtené el object id del SP del Tenant Connector
 SP_OBJECT_ID=$(az ad sp show --id [CONNECTOR_CLIENT_ID] --query id -o tsv)
 echo "SP object id: $SP_OBJECT_ID"
 
-# 4. Asigná Reader en la subscription
+# 4. Asigná Reader en la subscription elegida
 az role assignment create \
-  --assignee-object-id $SP_OBJECT_ID \
+  --assignee-object-id "$SP_OBJECT_ID" \
   --assignee-principal-type ServicePrincipal \
   --role "Reader" \
   --scope "/subscriptions/<SUBSCRIPTION_ID>"
 ```
 
-## Opción C — PowerShell
+### Opción B.2 — PowerShell con az cli
+
+> **⚠ Importante:** `SP_OBJECT_ID=$(...)` es sintaxis **bash** y no funciona en PowerShell — la variable queda vacía y el siguiente comando falla con `argument --assignee-object-id: expected one argument`. En PowerShell usá `$VAR = comando` (con signo igual y espacio).
+
+```powershell
+# 1. Login al tenant que conectaste con Azure Hub
+az login --tenant <TU_TENANT_ID>
+
+# 2. Listá tus subs y elegí una
+az account list --query "[].{name:name, id:id}" -o table
+
+# 3. Obtené el object id del SP del Tenant Connector
+$SP_OBJECT_ID = az ad sp show --id [CONNECTOR_CLIENT_ID] --query id -o tsv
+Write-Host "SP object id: $SP_OBJECT_ID"
+
+# 4. Asigná Reader en la subscription elegida
+az role assignment create `
+  --assignee-object-id $SP_OBJECT_ID `
+  --assignee-principal-type ServicePrincipal `
+  --role "Reader" `
+  --scope "/subscriptions/<SUBSCRIPTION_ID>"
+```
+
+### Opción C — PowerShell con Az module (alternativa)
+
+Solo si ya tenés el módulo `Az` instalado y preferís cmdlets nativos:
 
 ```powershell
 # 1. Login
