@@ -5,7 +5,7 @@ category: connect-tenant
 slug: tenant-import
 order: 20
 readMinutes: 5
-tags: [Connect Tenant, Consulting, Enterprise]
+tags: [Connect Tenant, Team, Enterprise]
 lastUpdated: 2026-05-20
 author: javier
 sources:
@@ -97,8 +97,8 @@ We warn you at **200 imported resources per diagram**. Beyond that the canvas ke
 
 | Tier | Tenant Import |
 |---|---|
-| Free, PRO, Team | Not included |
-| **Consulting** | 1 connected tenant, unlimited imports, refresh, 30-day snapshot history |
+| Free, PRO | Not included |
+| **Team** | 1 connected tenant, unlimited imports, refresh, 30-day snapshot history |
 | **Enterprise** | Multi-tenant, scheduled refresh, drift alerts, 90-day snapshot history |
 
 ## Troubleshooting

@@ -5,7 +5,7 @@ category: connect-tenant
 slug: tenant-import
 order: 20
 readMinutes: 5
-tags: [Connect Tenant, Consulting, Enterprise]
+tags: [Connect Tenant, Team, Enterprise]
 lastUpdated: 2026-05-20
 author: javier
 sources:
@@ -97,8 +97,8 @@ Te avisamos a partir de **200 recursos importados por diagrama**. Más allá de 
 
 | Tier | Tenant Import |
 |---|---|
-| Free, PRO, Team | No incluido |
-| **Consulting** | 1 tenant conectado, imports ilimitados, refresh, 30 días de snapshots |
+| Free, PRO | No incluido |
+| **Team** | 1 tenant conectado, imports ilimitados, refresh, 30 días de snapshots |
 | **Enterprise** | Multi-tenant, refresh agendado, drift alerts, 90 días de snapshots |
 
 ## Troubleshooting

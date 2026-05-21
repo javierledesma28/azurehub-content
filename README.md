@@ -54,7 +54,7 @@ This handbook is the **missing middle layer** — opinionated like a senior arch
 | 👋 New to this | 🏗 Picking a tool | 🛡 Selling to a client |
 |---|---|---|
 | [**First 5 minutes**](./start/getting-started.es.md) — what this is and when to bail | [**AzCAF — Landing Zone tier**](./herramientas/azcaf.es.md) — decide T1/T2/T3 in 30 min | [**Connect Tenant security FAQ**](./connect-tenant/security-faq.es.md) — what we touch, what we don't |
-| [**Glossary**](./start/glossary.es.md) — tenant ≠ subscription ≠ directory | [**AzNamer**](./herramientas/aznamer.es.md) — CAF naming with brutal honesty | [**Plans**](./cuenta/planes.es.md) — Free, PRO, Team, Consulting, Enterprise |
+| [**Glossary**](./start/glossary.es.md) — tenant ≠ subscription ≠ directory | [**AzNamer**](./herramientas/aznamer.es.md) — CAF naming with brutal honesty | [**Plans**](./cuenta/planes.es.md) — Free, PRO, Team, Enterprise |
 
 ---
 
@@ -137,10 +137,10 @@ This repo gives you the **thinking** behind each tool, free forever.
 
 | Plan | Price | When |
 |---|---|---|
-| **Free** | $0 | 13 tools, 1 cloud diagram, local storage |
-| **PRO** | $12 / month | 21 tools, unlimited diagrams + workspaces, cloud sync |
-| **Consulting** | $49 / month | + 1 Azure tenant connected (Reader) + live audits |
-| **Enterprise** | $149 / month | + unlimited tenants + scheduled audits + 90-day history |
+| **Free** | $0 | 14 tools, 1 cloud diagram, local storage |
+| **PRO** | $12 / month | 21 tools, unlimited diagrams + cloud sync |
+| **Team** | $29 / seat / month (min 2) | + shared workspaces, SSO, 1 Azure tenant connected (Reader) + live audits (AzNamer Audit, Tenant Import) |
+| **Enterprise** | $149 / month + seats | + unlimited tenants, AzPolicy Compare, scheduled audits, 90-day history, API + IaC export |
 
 Every signup includes a **15-day PRO trial with no credit card**. Cancel anytime.
 

@@ -89,7 +89,7 @@ Trial PRO 15 días sin tarjeta.
 ## Diferencial real
 - Connect Tenant: bindeás un tenant Azure real (read-only)
   y los tools cruzan tu diseño contra la realidad deployada.
-- AzNamer Audit ya está live en tier Consulting+.
+- AzNamer Audit + Tenant Import (AzDraw Live) ya están live en tier Team+.
 - AzPolicy/AzRBAC/AzCompliance audits arrivan Q3/Q4 2026.
 
 ## Cuándo NO vale la pena

@@ -201,8 +201,8 @@ Esto evita writes cuando solo estás navegando.
 | Free       | 1                       |
 | Trial PRO  | Ilimitados              |
 | PRO        | Ilimitados              |
-| Consulting | Ilimitados              |
-| Enterprise     | Ilimitados              |
+| Team       | Ilimitados              |
+| Enterprise | Ilimitados              |
 
 El dropdown `DiagramSwitcher` en la TopBar:
 - Lista los diagramas del workspace activo

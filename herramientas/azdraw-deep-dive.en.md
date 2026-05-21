@@ -201,8 +201,8 @@ This avoids writes when you're just navigating.
 | Free       | 1                      |
 | PRO Trial  | Unlimited              |
 | PRO        | Unlimited              |
-| Consulting | Unlimited              |
-| Enterprise     | Unlimited              |
+| Team       | Unlimited              |
+| Enterprise | Unlimited              |
 
 The `DiagramSwitcher` dropdown in the TopBar:
 - Lists the diagrams in the active workspace

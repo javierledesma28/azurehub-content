@@ -1,12 +1,12 @@
 ---
 title: Plans
-description: Free, PRO, Team, Consulting, Enterprise — what you pay, what each unlocks, no marketing.
+description: Free, PRO, Team, Enterprise — what you pay, what each unlocks, no marketing.
 category: cuenta
 slug: planes
 order: 10
 readMinutes: 4
 tags: [Pricing, Account]
-lastUpdated: 2026-05-20
+lastUpdated: 2026-05-21
 author: javier
 sources:
   - /pricing
@@ -26,41 +26,44 @@ Technically documenting what each plan unlocks, what limits it has, and when eac
 
 ### Tabular summary
 
-| Plan       | Price    | Tools          | Cloud sync | Workspaces | Connect Tenant | Ideal for                             |
-|------------|----------|----------------|------------|------------|----------------|---------------------------------------|
-| Free       | $0       | 13 (of 21)     | 1 diagram  | 0          | ❌             | Trying the Hub without signing up     |
-| PRO        | $12/mo   | 21             | Unlimited  | Unlimited  | ❌             | Full-time individual architect        |
-| Team       | $29/seat | 21             | Unlimited  | Shared     | ❌             | Internal teams with SSO               |
-| Consulting | $49/mo   | 21 + audit     | Unlimited  | Unlimited  | ✅ 1 tenant    | Multi-client freelancers              |
-| Enterprise     | $149/mo  | 21 + audit + scheduled | Unlimited | Unlimited | ✅ Unlimited | Consultancies / MSPs                |
+| Plan       | Price                | Tools                       | Cloud sync | Workspaces  | Connect Tenant | Ideal for                             |
+|------------|----------------------|-----------------------------|------------|-------------|----------------|---------------------------------------|
+| Free       | $0                   | 14 (of 21)                  | 1 diagram  | 0           | ❌             | Trying the Hub without signing up     |
+| PRO        | $12/mo               | 21                          | Unlimited  | Personal    | ❌             | Full-time individual architect        |
+| **Team**   | **$29/seat (min 2)** | **21 + audits**             | Unlimited  | Shared      | ✅ 1 tenant    | Small consultancy · internal team     |
+| Enterprise | $149/mo + seats      | 21 + audits + AzPolicy Compare + scheduled | Unlimited | Unlimited   | ✅ Unlimited   | Large consultancies · MSPs            |
 
 Yearly: ~30% discount (e.g., PRO $99 vs $144).
+
+> **Model change (2026-05-21):** the Consulting tier ($49) was absorbed into Team per-seat. If you were on Consulting, you're now on Team with all the audits you already had.
 
 ### What each jump unlocks
 
 **Free → PRO ($12/mo)** — when you're already using the Hub and want:
 - The 7 PRO tools (AzPolicy, AzRBAC, AzCompliance, AzZeroTrust, AzResiliency, AzFinOps, AzMigrate, AzAI)
 - Unlimited diagrams with cloud sync
-- Unlimited workspaces to separate contexts
+- Export Markdown, Mermaid, Bicep, Terraform
+- No watermark · personal workspace + 30-day version history
 
-**PRO → Consulting ($49/mo)** — when you work with clients and want:
-- **Connect Tenant**: bind a real Azure tenant (read-only) to the workspace
+**PRO → Team ($29/seat, min 2)** — when you work with clients or in a team and want:
+- Shared workspaces + team templates + SSO (SAML/Entra) + custom branding
+- **Connect Tenant**: bind 1 real Azure tenant (read-only) to the workspace
 - **Live AzNamer Audit**: cross-check your CAF convention against the client's real resources
-- **AzPolicy Compare** (Q3 2026): designed policies vs deployed assignments
-- **Audit history**: every audit you run is saved in the workspace
+- **Tenant Import (AzDraw Live)**: import real topology and compare against the diagram
+- 30-day audit history
 
-**Consulting → Enterprise ($149/mo)** — when you handle multiple clients and want:
-- Unlimited Azure tenants (not just 1)
+**Team → Enterprise ($149/mo + seats)** — when you handle multiple clients and want:
+- Unlimited connected Azure tenants (not just 1)
+- **AzPolicy Compare**: designed policies vs deployed assignments
 - **Scheduled audits**: run on their own daily or weekly
-- **Delta detection**: tells you what changed between audits
+- **Email/Slack alerts** on drift
 - 90-day history retention
-- Dedicated Slack for support
+- API + IaC export (REST + Terraform/Bicep)
+- SLA 99.9% · priority support
 
 ### PRO Trial included on signup
 
-Any new user starts with 15 days of **PRO trial, no card**. You get the full PRO feature set. It's not Consulting/Enterprise (Connect Tenant is visible but no scheduled audits).
-
-If you want to test Connect Tenant during the trial → you can connect your Azure sandbox. It's the best way to evaluate if Consulting is for you.
+Any new user starts with 15 days of **PRO trial, no card**. You get the full PRO feature set. It's not Team/Enterprise (Connect Tenant is visible but cannot be activated).
 
 [See trial details →](/learn/conceptos/trial-pro)
 
@@ -79,31 +82,28 @@ If you want to test Connect Tenant during the trial → you can connect your Azu
 
 ## Field hack
 
-**If you're torn between PRO and Consulting → start with PRO monthly.**
+**If you're torn between PRO and Team → start with PRO monthly.**
 
-PRO monthly + Connect Tenant in the trial → gives you a week to evaluate Consulting **while you're already paying PRO**. If the audit pays off, upgrade to Consulting next month. If not, stay on PRO with no $49 commitment.
+If after a month you find yourself needing to audit real tenants, that's when you jump to Team (min 2 seats = $58). A single proposal won with the audit already pays it 30 times over.
 
 No penalty for moving between plans — automatic proration.
 
 ## Take it to your AI
 
 ```markdown
-# Azure Hub plans — decision matrix
+# Azure Hub plans — decision matrix (post 2026-05-21)
 
 ## Decision tree
 Do you use the Hub >2x per week?
   NO → Free
-  YES → Do you work with external clients?
-    NO → Are you solo or in a team?
-      Solo → PRO ($12)
-      Team → Team ($29/seat, Q3 2026)
-    YES → How many simultaneous clients?
-      1-2 → Consulting ($49)
-      3+ with regular audits → Enterprise ($149)
+  YES → Do you need to audit real Azure tenants?
+    NO → PRO ($12/mo)
+    YES → How many tenants/clients simultaneously?
+      1 + small team → Team ($29/seat, min 2 = $58)
+      Multiple + need AzPolicy Compare → Enterprise ($149 + seats)
 
 ## Trial
 Free 15 days, no card, all PRO unlocked.
-Connect Tenant available for sandbox tests.
 
 ## Payments
 Paddle (merchant of record) — Q3 2026
@@ -114,4 +114,4 @@ Until then: launching soon notice.
 
 - **[/pricing](/pricing)** — the full pricing page with UI and yearly/monthly toggle
 - **[PRO Trial](/learn/conceptos/trial-pro)** — full trial mechanics
-- **[Connect Tenant Security](/learn/connect-tenant/security-faq)** — exact permissions if going to Consulting/Enterprise
+- **[Connect Tenant Security](/learn/connect-tenant/security-faq)** — exact permissions if going to Team/Enterprise

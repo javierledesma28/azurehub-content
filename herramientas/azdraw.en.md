@@ -57,7 +57,7 @@ Every diagram lives in a workspace. Switcher in the top bar to change workspace;
 
 - **Free**: 1 diagram
 - **PRO / Trial**: unlimited
-- **Consulting**: unlimited + tenant binding for AzNamer Audit
+- **Team**: unlimited + tenant binding for AzNamer Audit + Tenant Import
 
 ### Smart auto-save
 

@@ -362,7 +362,7 @@ Cuando armás una Landing Zone con AzCAF, los recursos foundation (Mgmt Groups, 
 4. Día 4: Workshop con el equipo del cliente — pasás la convención y el reporte
 5. Día 5: Entregable: convención + roadmap de migración + audit reproducible
 
-**Pricing tier**: Consulting $49 te alcanza para 1 engagement. Si tenés 3+ clientes con audits regulares, Enterprise $149 con scheduled audits paga el delta solo.
+**Pricing tier**: Team $29/seat (mín 2 = $58) te alcanza para 1 engagement con audits incluidos. Si tenés 3+ clientes con audits regulares, Enterprise $149 con scheduled audits paga el delta solo.
 
 ## Common pitfalls — las 12 que más vi
 

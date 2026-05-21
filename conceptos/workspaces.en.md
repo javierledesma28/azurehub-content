@@ -32,7 +32,7 @@ A **Workspace** in Azure Hub is the top-level container of your work. Each works
 **What you'll be able to do:**
 
 - Isolate content per client / project / initiative
-- Bind each workspace to an Azure tenant (PRO Consulting+)
+- Bind each workspace to an Azure tenant (Team+)
 - Keep naming conventions independent
 - Switch context with a dropdown in the TopBar
 

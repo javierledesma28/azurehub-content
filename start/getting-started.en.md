@@ -89,7 +89,7 @@ SaaS for Azure architects. 21 tools, freemium ($0 / $12 / $49 / $149).
 ## Real differentiator
 - Connect Tenant: bind a real Azure tenant (read-only)
   and tools cross-check your design against the deployed reality.
-- AzNamer Audit live in Consulting+ tier.
+- AzNamer Audit + Tenant Import (AzDraw Live) live in Team+ tier.
 - AzPolicy/AzRBAC/AzCompliance audits arrive Q3/Q4 2026.
 
 ## When it's NOT worth it

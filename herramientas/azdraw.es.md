@@ -57,7 +57,7 @@ Cada diagrama vive en un workspace. Switcher en la top-bar para cambiar de works
 
 - **Free**: 1 diagrama
 - **PRO / Trial**: ilimitados
-- **Consulting**: ilimitados + tenant binding para AzNamer Audit
+- **Team**: ilimitados + tenant binding para AzNamer Audit + Tenant Import
 
 ### Auto-save inteligente
 

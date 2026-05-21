@@ -394,7 +394,7 @@ En roadmap (Q3 2026):
 4. Semana 5: Workshop con su equipo, transfer de knowledge
 5. Semana 6: Audit baseline + roadmap de 12 meses
 
-**Pricing tier**: Consulting $49/mes te alcanza si es un cliente. Enterprise $149/mes si manejás 3+.
+**Pricing tier**: Team $29/seat (mín 2 = $58/mes) te alcanza si es un cliente. Enterprise $149/mes si manejás 3+.
 
 ## Cuándo NO usar CAF
 
