@@ -91,7 +91,7 @@ No hay penalidad por moverte entre planes — prorratéo automático.
 ## Llevatelo a tu IA
 
 ```markdown
-# Azure Hub plans — decision matrix (post 2026-05-21)
+# Hub28 plans — decision matrix (post 2026-05-21)
 
 ## Decision tree
 ¿Usás el Hub >2x por semana?

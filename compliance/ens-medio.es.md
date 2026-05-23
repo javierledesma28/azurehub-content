@@ -1,5 +1,5 @@
 ---
-title: ENS Medio — audit automatizado desde Azure Hub
+title: ENS Medio — audit automatizado desde Hub28
 description: Cómo AzCompliance Audit cubre los 73 controles del ENS categoría Media (RD 311/2022) contra tu tenant Azure conectado. Qué chequeamos automático, qué queda manual y cómo se interpreta el reporte.
 category: compliance
 slug: ens-medio

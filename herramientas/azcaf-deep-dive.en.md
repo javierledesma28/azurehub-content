@@ -199,7 +199,7 @@ Total setup time: **2-4 months** with a dedicated team.
 **Tenant per client + your own management tenant.**
 
 Each client has their own Tier 2 or 3 LZ. You as MSP:
-- Workspace in Azure Hub per client
+- Workspace in Hub28 per client
 - Connect Tenant to each (Enterprise tier $149)
 - Scheduled daily/weekly audits with delta detection
 - Consolidated reports

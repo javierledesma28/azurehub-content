@@ -70,7 +70,7 @@ It's the most differentiated feature and the one that creates the most fear. But
 ## Take it to your AI
 
 ```markdown
-# Azure Hub PRO Trial — quick facts
+# Hub28 PRO Trial — quick facts
 
 Duration: 15 calendar days
 Card: NOT required
@@ -90,4 +90,4 @@ Post-trial offer: "1 month free with quarterly plan"
 
 ## Official sources
 
-This is an internal Azure Hub mechanism, not Azure / Microsoft. If you want to see the code, it's in `api/src/jobs/trialCheck.ts` (pg-boss schedule running cron `17 * * * *`).
+This is an internal Hub28 mechanism, not Azure / Microsoft. If you want to see the code, it's in `api/src/jobs/trialCheck.ts` (pg-boss schedule running cron `17 * * * *`).

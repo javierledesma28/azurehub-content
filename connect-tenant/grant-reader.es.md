@@ -1,6 +1,6 @@
 ---
 title: Dar acceso Reader al Tenant Connector
-description: Guía paso a paso para darle al Service Principal de Azure Hub permiso de lectura en tu tenant.
+description: Guía paso a paso para darle al Service Principal de Hub28 permiso de lectura en tu tenant.
 category: connect-tenant
 slug: grant-reader
 order: 30
@@ -15,7 +15,7 @@ sources:
 
 ## Por qué hace falta esto
 
-Cuando hacés click en **Conectar Tenant** en un workspace, Microsoft Entra crea una Enterprise Application del **Azure Hub Tenant Connector** en tu tenant. Eso le da a Azure Hub *identidad* dentro de tu tenant — pero **todavía sin permisos RBAC de Azure**.
+Cuando hacés click en **Conectar Tenant** en un workspace, Microsoft Entra crea una Enterprise Application del **Hub28 Tenant Connector** en tu tenant. Eso le da a Hub28 *identidad* dentro de tu tenant — pero **todavía sin permisos RBAC de Azure**.
 
 Para listar e importar recursos, el Service Principal necesita el rol **Reader** en al menos una subscription (o un management group que cubra varias subs).
 
@@ -41,7 +41,7 @@ Empezá con una sub. Después podés agregar más.
 5. Role: buscá **Reader** → Next.
 6. Members: **Assign access to** = User, group, or service principal → click en **+ Select members**.
 7. En la caja de búsqueda pegá el client id del Connector: `[CONNECTOR_CLIENT_ID]` *(aparece en el modal de Tenant Import)*.
-8. Aparece "Azure Hub Tenant Connector" → seleccionalo → click en **Select**.
+8. Aparece "Hub28 Tenant Connector" → seleccionalo → click en **Select**.
 9. Review + assign.
 
 Esperá ~30-60 segundos para propagación, después click en el ícono refresh del modal.
@@ -51,7 +51,7 @@ Esperá ~30-60 segundos para propagación, después click en el ícono refresh d
 ### Opción B.1 — bash / WSL
 
 ```bash
-# 1. Login al tenant que conectaste con Azure Hub
+# 1. Login al tenant que conectaste con Hub28
 az login --tenant <TU_TENANT_ID>
 
 # 2. Listá tus subs y elegí una
@@ -74,7 +74,7 @@ az role assignment create \
 > **⚠ Importante:** `SP_OBJECT_ID=$(...)` es sintaxis **bash** y no funciona en PowerShell — la variable queda vacía y el siguiente comando falla con `argument --assignee-object-id: expected one argument`. En PowerShell usá `$VAR = comando` (con signo igual y espacio).
 
 ```powershell
-# 1. Login al tenant que conectaste con Azure Hub
+# 1. Login al tenant que conectaste con Hub28
 az login --tenant <TU_TENANT_ID>
 
 # 2. Listá tus subs y elegí una
@@ -123,21 +123,21 @@ Tiene que aparecer al menos una fila con `Reader` y un scope. Si aparece, volvé
 
 ## Errores comunes
 
-- **Logueado al tenant equivocado**: `az account show` tiene que mostrar el tenant ID que conectaste a Azure Hub. Si no, `az login --tenant <id-correcto>`.
+- **Logueado al tenant equivocado**: `az account show` tiene que mostrar el tenant ID que conectaste a Hub28. Si no, `az login --tenant <id-correcto>`.
 - **Asignado al principal equivocado**: el *application object* del App Registration es distinto del *service principal*. Siempre usá `az ad sp show --id <client-id>` para encontrar el SP — nunca el object id de la application.
 - **Rol con permisos insuficientes**: `Reader` es el mínimo. Roles built-in como `Reader and Data Access` también sirven, pero `Storage Account Reader` no — está scopeado a un tipo de recurso.
 - **Demora de propagación**: los role assignments pueden tardar 30 segundos a 10 minutos en propagarse. Si el refresh en el modal sigue mostrando 0 subs, esperá un poco y volvé a probar.
 
 ## Revocar acceso
 
-Cuando ya no quieras que Azure Hub acceda a tu tenant:
+Cuando ya no quieras que Hub28 acceda a tu tenant:
 
 1. Click en **Disconnect Tenant** en la configuración del workspace (revoca el consent).
 2. Para revocar también el rol RBAC:
    ```bash
    az role assignment delete --assignee [CONNECTOR_CLIENT_ID] --scope "/subscriptions/<SUBSCRIPTION_ID>"
    ```
-3. Opcional: borrar la Enterprise Application del tenant: Azure portal → **Microsoft Entra ID** → **Enterprise applications** → **Azure Hub Tenant Connector** → **Properties** → **Delete**.
+3. Opcional: borrar la Enterprise Application del tenant: Azure portal → **Microsoft Entra ID** → **Enterprise applications** → **Hub28 Tenant Connector** → **Properties** → **Delete**.
 
 ## Qué podemos y NO podemos hacer con Reader
 
@@ -151,4 +151,4 @@ Cuando ya no quieras que Azure Hub acceda a tu tenant:
 | Escribir cualquier recurso | ❌ Reader es read-only por diseño |
 | Borrar cualquier recurso | ❌ Idem |
 
-El role assignment del connector es tu red de seguridad: mientras sea `Reader`, Azure Hub físicamente no puede modificar tu tenant.
+El role assignment del connector es tu red de seguridad: mientras sea `Reader`, Hub28 físicamente no puede modificar tu tenant.

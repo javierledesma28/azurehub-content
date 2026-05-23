@@ -31,7 +31,7 @@ A compact reference for the terms we use most in the Hub. Each entry links to Mi
 - **Directory** — informal synonym for tenant. It's Entra ID (formerly Azure AD).
 - **Subscription** — the billing container inside a tenant. A company can have N subscriptions, all under the same tenant.
 - **Management Group** — groups subscriptions to apply policies/RBAC in bulk. Forms a hierarchy up to 6 levels deep.
-- **Service Principal (SP)** — application identity (not human). When you grant consent to Azure Hub Tenant Connector, an SP is created in your tenant.
+- **Service Principal (SP)** — application identity (not human). When you grant consent to Hub28 Tenant Connector, an SP is created in your tenant.
 
 ### Resources
 
@@ -61,7 +61,7 @@ A compact reference for the terms we use most in the Hub. Each entry links to Mi
 - **RBAC (Role-Based Access Control)** — permission model by role. Reader / Contributor / Owner are most common.
 - **Tag** — key-value pair to classify resources. Essential for cost allocation, lifecycle, contact info.
 
-### Azure Hub specific
+### Hub28 specific
 
 - **Workspace** — top-level container for your work (multi-client, multi-project). [See Workspaces](/learn/conceptos/workspaces).
 - **Tenant binding** — relationship between a workspace and a connected Azure tenant. Enables audits.

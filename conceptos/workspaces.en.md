@@ -20,7 +20,7 @@ If you work multi-client or multi-project, mixing context is the first sin.
 
 ## What it's for
 
-A **Workspace** in Azure Hub is the top-level container of your work. Each workspace has its own set of diagrams (AzDraw), reviews (AzReview), subnet plans (AzNet) and — once you connect it — its binding to a real Azure tenant.
+A **Workspace** in Hub28 is the top-level container of your work. Each workspace has its own set of diagrams (AzDraw), reviews (AzReview), subnet plans (AzNet) and — once you connect it — its binding to a real Azure tenant.
 
 **Problems you probably have:**
 
@@ -57,7 +57,7 @@ Workspace "Acme Client"
 
 ## Architectural decision
 
-**A workspace is to Azure Hub what a Management Group is to Azure.**
+**A workspace is to Hub28 what a Management Group is to Azure.**
 
 | Path | When it fits |
 |---|---|

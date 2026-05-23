@@ -1,5 +1,5 @@
 ---
-title: ENS Medio — automated audit from Azure Hub
+title: ENS Medio — automated audit from Hub28
 description: How AzCompliance Audit covers the 73 controls of the Spanish ENS Medio (RD 311/2022) framework against your connected Azure tenant. What we check automatically, what stays manual, and how to read the report.
 category: compliance
 slug: ens-medio

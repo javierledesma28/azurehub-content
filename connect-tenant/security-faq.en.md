@@ -22,7 +22,7 @@ Connecting a tenant to a third-party SaaS isn't trivial — the question "what d
 
 ## What it's for
 
-It explains **exactly** what Azure Hub can and cannot do in a connected tenant. No marketing abstractions — specific permissions, scopes, and the commands the admin can run to verify it in their own tenant.
+It explains **exactly** what Hub28 can and cannot do in a connected tenant. No marketing abstractions — specific permissions, scopes, and the commands the admin can run to verify it in their own tenant.
 
 **What you'll be able to do:**
 
@@ -35,7 +35,7 @@ It explains **exactly** what Azure Hub can and cannot do in a connected tenant. 
 
 ### What we ask
 
-A single multi-tenant App Registration ("Azure Hub Tenant Connector") with these **Application permissions**:
+A single multi-tenant App Registration ("Hub28 Tenant Connector") with these **Application permissions**:
 
 | Permission | API | Why we ask for it |
 |---|---|---|
@@ -46,7 +46,7 @@ A single multi-tenant App Registration ("Azure Hub Tenant Connector") with these
 
 **All are `.Read.*` or equivalent.** We never ask for any `.ReadWrite`, any `Directory.AccessAsUser.All`, or any permission that allows modifying anything.
 
-### What Azure Hub does with those permissions
+### What Hub28 does with those permissions
 
 | Action | Do we do it? |
 |---|---|
@@ -62,7 +62,7 @@ A single multi-tenant App Registration ("Azure Hub Tenant Connector") with these
 
 ### How to verify from the client's tenant
 
-Once the admin accepts consent, an Enterprise Application called **"Azure Hub Tenant Connector"** appears in THEIR tenant. To audit it:
+Once the admin accepts consent, an Enterprise Application called **"Hub28 Tenant Connector"** appears in THEIR tenant. To audit it:
 
 ```bash
 # Show the app, its permissions and assignments
@@ -77,7 +77,7 @@ az monitor activity-log list \
 az ad sp delete --id <APP_OBJECT_ID>
 ```
 
-Or via portal: **Microsoft Entra → Enterprise applications → Azure Hub Tenant Connector → Permissions / Sign-in logs / Delete**.
+Or via portal: **Microsoft Entra → Enterprise applications → Hub28 Tenant Connector → Permissions / Sign-in logs / Delete**.
 
 ### How the token works
 
@@ -89,15 +89,15 @@ Or via portal: **Microsoft Entra → Enterprise applications → Azure Hub Tenan
 
 ## Architectural decision
 
-**What sets Azure Hub apart from other SaaS that ask for consent**:
+**What sets Hub28 apart from other SaaS that ask for consent**:
 
 | Model | When it fits | Risk |
 |---|---|---|
 | **Delegated permissions** (acting "as user") | Basic auth, your user acting | If user is Owner, the SaaS is too |
-| **Application permissions read-only** ✅ Azure Hub | Audits, inventories, reporting | Low — no write, no data-plane |
+| **Application permissions read-only** ✅ Hub28 | Audits, inventories, reporting | Low — no write, no data-plane |
 | **Application permissions full** | Provisioners, deployers, IaC managers | High — they can modify everything |
 
-Azure Hub deliberately sits in the middle: **enough permissions to audit, zero permissions to touch anything**. If you need a provisioner, Azure Hub isn't the tool — go to Terraform Cloud or Bicep deployments.
+Hub28 deliberately sits in the middle: **enough permissions to audit, zero permissions to touch anything**. If you need a provisioner, Hub28 isn't the tool — go to Terraform Cloud or Bicep deployments.
 
 Reference: [Microsoft consent and permissions framework](https://learn.microsoft.com/azure/active-directory/develop/v2-permissions-and-consent)
 
@@ -112,7 +112,7 @@ Any provider that insists on "just connect production directly" without offering
 ## Take it to your AI
 
 ```markdown
-# Azure Hub Tenant Connector — security one-pager
+# Hub28 Tenant Connector — security one-pager
 
 ## Permissions
 - Read-only Application permissions:
@@ -132,8 +132,8 @@ Any provider that insists on "just connect production directly" without offering
 - Sell or share data
 
 ## How to revoke
-Microsoft Entra → Enterprise apps → Azure Hub Tenant Connector → Delete
-(instant, no need to come back to Azure Hub)
+Microsoft Entra → Enterprise apps → Hub28 Tenant Connector → Delete
+(instant, no need to come back to Hub28)
 ```
 
 ## Official sources

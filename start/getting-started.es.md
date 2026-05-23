@@ -61,7 +61,7 @@ Si en dos días no te resolviste un problema concreto con el Hub, probablemente 
 
 ## Decisión arquitectural
 
-**¿Cuándo NO necesitás Azure Hub?**
+**¿Cuándo NO necesitás Hub28?**
 
 - Sos arquitecto solo, un solo cliente, todo onpremises → la mayoría de tools no te aportan
 - Solo dibujás diagramas y ya tenés Lucid/Miro → AzDraw es más bueno para Azure pero la curva de switcheo puede no valer
@@ -80,7 +80,7 @@ La probabilidad de adopción es directamente proporcional a la frecuencia del do
 ## Llevatelo a tu IA
 
 ```markdown
-# Azure Hub — quick onboarding
+# Hub28 — quick onboarding
 
 ## ¿Qué es?
 SaaS para arquitectos Azure. 21 tools, freemium ($0 / $12 / $49 / $149).

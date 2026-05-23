@@ -1,6 +1,6 @@
 ---
 title: Grant Reader access to the Tenant Connector
-description: Step-by-step guide to give the Azure Hub Service Principal read access in your tenant.
+description: Step-by-step guide to give the Hub28 Service Principal read access in your tenant.
 category: connect-tenant
 slug: grant-reader
 order: 30
@@ -15,7 +15,7 @@ sources:
 
 ## Why this is needed
 
-When you click **Connect Tenant** in a workspace, Microsoft Entra creates an Enterprise Application for **Azure Hub Tenant Connector** in your tenant. That gives Azure Hub *identity* in your tenant — but **no Azure RBAC permissions yet**.
+When you click **Connect Tenant** in a workspace, Microsoft Entra creates an Enterprise Application for **Hub28 Tenant Connector** in your tenant. That gives Hub28 *identity* in your tenant — but **no Azure RBAC permissions yet**.
 
 To list and import resources, the Service Principal needs the **Reader** role on at least one subscription (or a management group covering several subs).
 
@@ -41,7 +41,7 @@ Start with one subscription. You can always add more later.
 5. Role: search for **Reader** → Next.
 6. Members: **Assign access to** = User, group, or service principal → click **+ Select members**.
 7. In the search box, paste the Connector app id: `[CONNECTOR_CLIENT_ID]` *(shown in the Tenant Import modal)*.
-8. The "Azure Hub Tenant Connector" entry appears → select it → click **Select**.
+8. The "Hub28 Tenant Connector" entry appears → select it → click **Select**.
 9. Review + assign.
 
 Wait ~30-60 seconds for propagation, then click the refresh icon in the Tenant Import modal.
@@ -51,7 +51,7 @@ Wait ~30-60 seconds for propagation, then click the refresh icon in the Tenant I
 ### Option B.1 — bash / WSL
 
 ```bash
-# 1. Login to the tenant you connected to Azure Hub
+# 1. Login to the tenant you connected to Hub28
 az login --tenant <YOUR_TENANT_ID>
 
 # 2. List your subscriptions and pick one
@@ -74,7 +74,7 @@ az role assignment create \
 > **⚠ Important:** `SP_OBJECT_ID=$(...)` is **bash** syntax and does NOT work in PowerShell — the variable stays empty and the next command fails with `argument --assignee-object-id: expected one argument`. In PowerShell use `$VAR = command` (equals sign with spaces).
 
 ```powershell
-# 1. Login to the tenant you connected to Azure Hub
+# 1. Login to the tenant you connected to Hub28
 az login --tenant <YOUR_TENANT_ID>
 
 # 2. List your subscriptions and pick one
@@ -123,21 +123,21 @@ You should see at least one row with `Reader` and a scope. If it shows up, retur
 
 ## Common mistakes
 
-- **Logged into the wrong tenant**: `az account show` should print the tenant ID you connected to Azure Hub. If not, `az login --tenant <correct-id>`.
+- **Logged into the wrong tenant**: `az account show` should print the tenant ID you connected to Hub28. If not, `az login --tenant <correct-id>`.
 - **Assigned to the wrong principal**: the App Registration's *application* object is different from the *service principal*. Always use `az ad sp show --id <client-id>` to find the SP — never the application object id.
 - **Role with too few permissions**: `Reader` is the minimum. Built-in roles like `Reader and Data Access` work too, but `Storage Account Reader` does not — it's resource-type scoped.
 - **Propagation delay**: role assignments can take 30 seconds to 10 minutes to propagate globally. If the refresh in the modal still shows no subs, wait a bit and try again.
 
 ## Revoking access
 
-When you no longer want Azure Hub to access your tenant:
+When you no longer want Hub28 to access your tenant:
 
 1. Click **Disconnect Tenant** in the workspace settings (this revokes the consent).
 2. To also revoke the RBAC role:
    ```bash
    az role assignment delete --assignee [CONNECTOR_CLIENT_ID] --scope "/subscriptions/<SUBSCRIPTION_ID>"
    ```
-3. Optionally, delete the Enterprise Application from your tenant: Azure portal → **Microsoft Entra ID** → **Enterprise applications** → **Azure Hub Tenant Connector** → **Properties** → **Delete**.
+3. Optionally, delete the Enterprise Application from your tenant: Azure portal → **Microsoft Entra ID** → **Enterprise applications** → **Hub28 Tenant Connector** → **Properties** → **Delete**.
 
 ## What we can and cannot do with Reader
 
@@ -151,4 +151,4 @@ When you no longer want Azure Hub to access your tenant:
 | Write any resource | ❌ Reader is read-only by design |
 | Delete any resource | ❌ Same |
 
-The connector role assignment is your safety net: as long as it's `Reader`, Azure Hub physically cannot mutate your tenant.
+The connector role assignment is your safety net: as long as it's `Reader`, Hub28 physically cannot mutate your tenant.

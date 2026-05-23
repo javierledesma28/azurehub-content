@@ -20,7 +20,7 @@ Si trabajás multi-cliente o multi-proyecto, mezclar el contexto es el primer pe
 
 ## Para qué sirve
 
-Un **Workspace** en Azure Hub es el contenedor top-level del trabajo. Cada workspace tiene su propio set de diagramas (AzDraw), reviews (AzReview), subnet plans (AzNet) y — cuando lo conectes — su binding a un tenant Azure real.
+Un **Workspace** en Hub28 es el contenedor top-level del trabajo. Cada workspace tiene su propio set de diagramas (AzDraw), reviews (AzReview), subnet plans (AzNet) y — cuando lo conectes — su binding a un tenant Azure real.
 
 **Problemas que probablemente tenés:**
 
@@ -57,7 +57,7 @@ Workspace "Cliente Acme"
 
 ## Decisión arquitectural
 
-**El workspace es a Azure Hub lo que un Management Group es a Azure.**
+**El workspace es a Hub28 lo que un Management Group es a Azure.**
 
 | Camino | Cuándo conviene |
 |---|---|

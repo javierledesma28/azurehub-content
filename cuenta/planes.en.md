@@ -91,7 +91,7 @@ No penalty for moving between plans — automatic proration.
 ## Take it to your AI
 
 ```markdown
-# Azure Hub plans — decision matrix (post 2026-05-21)
+# Hub28 plans — decision matrix (post 2026-05-21)
 
 ## Decision tree
 Do you use the Hub >2x per week?

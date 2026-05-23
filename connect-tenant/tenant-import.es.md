@@ -15,7 +15,7 @@ sources:
 
 ## Qué hace
 
-Elegís cualquier Resource Group de tu tenant Azure conectado y Azure Hub te lo dibuja en AzDraw — con boundaries nested (RG → VNet → Subnet), los íconos correctos por tipo de recurso y las conexiones de red entre ellos (peerings de VNet, NIC↔subnet, asociaciones NSG, Private Endpoints, VNet integration de App Service).
+Elegís cualquier Resource Group de tu tenant Azure conectado y Hub28 te lo dibuja en AzDraw — con boundaries nested (RG → VNet → Subnet), los íconos correctos por tipo de recurso y las conexiones de red entre ellos (peerings de VNet, NIC↔subnet, asociaciones NSG, Private Endpoints, VNet integration de App Service).
 
 Mantenés el control: los nodos importados van a una capa **Reality** separada, así seguís dibujando ideas nuevas en la capa **Design** y mostrás/ocultás la vista importada cuando querés.
 
@@ -27,7 +27,7 @@ Mantenés el control: los nodos importados van a una capa **Reality** separada, 
 4. Seleccioná uno o más Resource Groups en el árbol (sub → RG).
 5. Confirmá. El canvas se popula en ~2-10 segundos según el tamaño del RG.
 
-¿Querés mantenerlo sincronizado? Click en **Refresh** en cualquier momento — Azure Hub vuelve a consultar el tenant y te muestra un diff (nuevo / cambiado / borrado) para que decidas qué aplicar. Las posiciones que hayas movido se respetan.
+¿Querés mantenerlo sincronizado? Click en **Refresh** en cualquier momento — Hub28 vuelve a consultar el tenant y te muestra un diff (nuevo / cambiado / borrado) para que decidas qué aplicar. Las posiciones que hayas movido se respetan.
 
 ## Permisos necesarios
 
