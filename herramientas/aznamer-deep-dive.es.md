@@ -152,7 +152,7 @@ finops:             fo
 
 ### Lo que el engine evalúa
 
-Cuando corrés AzNamer Audit contra un tenant conectado, el engine ([código](https://github.com/javierledesma28/AzureHub/blob/master/api/src/lib/azNamerAudit.ts)) hace:
+Cuando corrés AzNamer Audit contra un tenant conectado, el engine ([código](https://github.com/javierledesma28/hub28/blob/master/api/src/lib/azNamerAudit.ts)) hace:
 
 1. **Lista subscriptions** vía ARM API (`GET /subscriptions`)
 2. **Por cada subscription**, lista resource groups + resources (`GET /subscriptions/<id>/resources`)
@@ -178,7 +178,7 @@ Tipos comunes sin regla todavía:
 - `Microsoft.OperationsManagement/solutions`
 - Casi todo en Microsoft.PowerBI, Microsoft.Synapse extensions
 
-Si te frustra ver muchos "unmapped" en tu audit, [abrí un issue](https://github.com/javierledesma28/AzureHub/issues) listando los tipos que querés que cubramos.
+Si te frustra ver muchos "unmapped" en tu audit, [abrí un issue](https://github.com/javierledesma28/hub28/issues) listando los tipos que querés que cubramos.
 
 ### Cómo leer el reporte
 
